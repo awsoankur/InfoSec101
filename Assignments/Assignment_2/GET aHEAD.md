@@ -1,7 +1,7 @@
 # PicoGym Web Exploitation Writeup
 
 
-Author: [Naman Gupta](https://github.com/awsoankur) 
+Author: [Ankur Kumar](https://github.com/awsoankur) 
 
 Challenge Page: [Get aHEAD](http://mercury.picoctf.net:15931/)
 
@@ -11,4 +11,3 @@ after spending a lot of time looking for a third option from the hint , i notice
 ## Flag
 `picoCTF{r3j3ct_th3_du4l1ty_82880908}`
 
-## Useful resources (if any)
