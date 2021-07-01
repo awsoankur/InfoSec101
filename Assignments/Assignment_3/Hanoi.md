@@ -7,7 +7,7 @@ Level: Hanoi
 
 ## Walkthrough
 Inspecting main function,it simply calls the function login so lets inspect that.
-`
+```
 4520 <login>
 4520:  c243 1024      mov.b	#0x0, &0x2410
 4524:  3f40 7e44      mov	#0x447e "Enter the password to continue.", r15
@@ -33,7 +33,7 @@ Inspecting main function,it simply calls the function login so lets inspect that
 4570:  3f40 0145      mov	#0x4501 "That password is not correct.", r15
 4574:  b012 de45      call	#0x45de <puts>
 4578:  3041           ret
-`
+```
 On obsering that we can see that in order to get to the block  which calls the unlock_door 
 function we need the condition `455a:  f290 5400 1024 cmp.b	#0x54, &0x2410` to 
 be true .
