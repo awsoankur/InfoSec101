@@ -14,7 +14,8 @@ long.
 now entering a long ass chain of 'a' as the password and upon obsering the disassembly we can 
 see the code being oveerwritten.
 On observing the login function carefully.
-`4562:  0f93           tst	r15
+```
+4562:  0f93           tst	r15
 4564:  0524           jz	#0x4570 <login+0x44>
 4566:  b012 4644      call	#0x4446 <unlock_door>
 456a:  3f40 d144      mov	#0x44d1 "Access granted.", r15
@@ -28,11 +29,11 @@ On observing the login function carefully.
 4588:  3040 3c44      br	#0x443c <__stop_progExec__>
 458c:  3150 1200      add	#0x12, sp
 4590:  3041           ret
-`
+```
 there is no way of calling the `unlock_door` function as it will always be jumped over.
 so we try to return this funtion from login itself .
 For the flow of execution to reach the return of login we need the condition 
-`4578:  f190 0600 1100 cmp.b	#0x6, 0x11(sp)` to be true so the execution doesn't
+```4578:  f190 0600 1100 cmp.b	#0x6, 0x11(sp)```to be true so the execution doesn't
 stop immidietly.
 So lets find out which offset of our payload should have what. 
 For this we need the address of the function as the sp when the the return statment is being 

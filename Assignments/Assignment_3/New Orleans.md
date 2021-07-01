@@ -9,7 +9,7 @@ Level: New Orleans
 upon starting in main , It is visible that the main function just calls the `check_password` 
 function and unlocks door only for non zero return value.
 Inspecting the function:
-`
+```
 44bc <check_password>
 44bc:  0e43           clr	r14
 44be:  0d4f           mov	r15, r13
@@ -23,12 +23,12 @@ Inspecting the function:
 44d0:  3041           ret
 44d2:  0f43           clr	r15
 44d4:  3041           ret
-` 
+```
 upon seeing how it works we can see that the function returns 1 if the password entered 
 matches with the data stored at memory adress `0x2400` .
 Setting breakpoint in the function and cheking the memory dump we can see the value of the 
 string.
-`2400:   3378 4770 384d 3000 0000 0000 0000 0000   3xGp8M0.........`
+```2400:   3378 4770 384d 3000 0000 0000 0000 0000   3xGp8M0.........```
 Therefore, `3xGp8M0` is the required password which will unlock the door. 
 ## Password
 `3xGp8M0`

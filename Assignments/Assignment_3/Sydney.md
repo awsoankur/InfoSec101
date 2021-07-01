@@ -9,7 +9,7 @@ Level: Sydney
 Going through the main function we can see that if r15 after the function call is non zero 
 then we can unlock the door.
 Inspecting `check_password`
-`
+```
 448a <check_password>
 448a:  bf90 446f 0000 cmp	#0x6f44, 0x0(r15)
 4490:  0d20           jnz	$+0x1c
@@ -23,14 +23,14 @@ Inspecting `check_password`
 44ac:  0e43           clr	r14
 44ae:  0f4e           mov	r14, r15
 44b0:  3041 
-`
+```
 Clearly we can see that 
 -first 2 bytes are being compared to 0x6f44
 -next 2 bytes are being compared to 0x2d77
 -next 2 bytes are being compared to 0x7b2c
 -last 2 bytes are being compared to 0x3f33
 so in order to avoid the line
-`44ac:  0e43           clr	r14`
+```44ac:  0e43           clr	r14```
 we need all these conditions to be true.
 hence we ned to input the password (as hex) `6f442d777b2c3f33`.
 But in since assembly little endian storage is used we must reverse the alternate bytes.
