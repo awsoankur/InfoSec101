@@ -6,7 +6,7 @@ Author: [Ankur Kumar](https://github.com/awsoankur)
 Challenge Page: [logon](http://jupiter.challenges.picoctf.org:44573)
 
 ## Walkthrough
-after plenty of unsucessful tries of sqli in the username field , went on to observing the cookies and spotted a cookie named "admin".
+After plenty of unsucessful tries of sqli in the username field , went on to observing the cookies and spotted a cookie named "admin".
 well lets put the value to True and volia!
 
 ## Flag
